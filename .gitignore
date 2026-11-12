@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+# Môi trường ảo / IDE
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+# Bí mật
+.env
+# train.csv (38 MB) không commit; repo có bản nén datasets/train.zip (7 MB), chương trình tự giải nén khi cần
+datasets/train.csv
+datasets/*.zip
+!datasets/train.zip
+# File sinh lại được
+results/predictions/test_predictions_selected_model.csv

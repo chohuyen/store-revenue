@@ -1,0 +1,3390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Store Revenue Forecast &amp; Planning Studio</string>
+  </property>
+  <property name="styleSheet">
+   <string>QMainWindow, QWidget#centralwidget, QScrollArea, QWidget[objectName^="scrollAreaContents"] { background: #f3f6fb; }
+QWidget { font-size: 10pt; color: #1f2d3d; }
+QFrame#frameMenu { background: #0f2d52; }
+QFrame#frameMenu QLabel { color: #ffffff; }
+QLabel[class="appTitle"] { font-size: 16pt; font-weight: bold; color: #ffffff; }
+QLabel[class="appSubtitle"] { font-size: 9pt; color: #b8c7dc; }
+QPushButton[class="menu"] { text-align: left; padding: 10px 12px; border: none; border-radius: 6px; color: #dce6f3; background: transparent; }
+QPushButton[class="menu"]:hover { background: #1b416f; }
+QPushButton[class="menu"]:checked { background: #1f6feb; color: #ffffff; font-weight: bold; }
+QLabel[class="pageTitle"] { font-size: 20pt; font-weight: bold; color: #13355f; }
+QLabel[class="pageSubtitle"] { color: #5b6b7f; }
+QFrame[class="kpi"] { background: #ffffff; border: 1px solid #dfe5ee; border-radius: 8px; }
+QLabel[class="kpiTitle"] { font-weight: bold; color: #13355f; border: none; }
+QLabel[class="kpiValue"] { font-size: 16pt; font-weight: bold; color: #13355f; border: none; }
+QLabel[class="kpiNote"] { font-size: 9pt; color: #5b6b7f; border: none; }
+QLabel[class="info"] { background: #e8f0fb; border-radius: 6px; padding: 8px; color: #24476f; }
+QLabel[class="warning"] { color: #9a5b00; }
+QGroupBox { background: #ffffff; border: 1px solid #dfe5ee; border-radius: 8px; margin-top: 14px; padding: 10px; font-weight: bold; color: #13355f; }
+QGroupBox::title { subcontrol-origin: margin; left: 12px; padding: 0 4px; }
+QPushButton { padding: 7px 14px; border: 1px solid #c9d3e0; border-radius: 6px; background: #ffffff; }
+QPushButton:hover { background: #eef3fa; }
+QPushButton[class="primary"] { background: #1f6feb; color: #ffffff; border: none; font-weight: bold; }
+QPushButton[class="primary"]:hover { background: #1a5fd0; }
+QPushButton:disabled { background: #d5dbe4; color: #7d8794; }
+QTableWidget { background: #ffffff; gridline-color: #e6ebf2; alternate-background-color: #f7f9fc; }
+QHeaderView::section { background: #eef2f7; padding: 4px; border: none; font-weight: bold; }
+QComboBox, QDateEdit, QLineEdit, QSpinBox { padding: 4px; border: 1px solid #c9d3e0; border-radius: 4px; background: #ffffff; }
+QTextBrowser, QTextEdit { background: #ffffff; color: #1f2d3d; border: 1px solid #dfe5ee; border-radius: 6px; }
+QComboBox { color: #1f2d3d; }
+QComboBox QAbstractItemView { background: #ffffff; color: #1f2d3d; border: 1px solid #c9d3e0; selection-background-color: #1f6feb; selection-color: #ffffff; outline: 0; }
+QDateEdit, QSpinBox, QLineEdit { color: #1f2d3d; }
+QCalendarWidget QWidget { background: #ffffff; color: #1f2d3d; alternate-background-color: #eef3fa; }
+QCalendarWidget QToolButton { color: #13355f; background: #eef3fa; border: none; padding: 4px; }
+QCalendarWidget QAbstractItemView:enabled { color: #1f2d3d; selection-background-color: #1f6feb; selection-color: #ffffff; }
+QCalendarWidget QAbstractItemView:disabled { color: #b0b8c4; }
+QTableWidget, QTableView { color: #1f2d3d; selection-background-color: #1f6feb; selection-color: #ffffff; }
+QTableCornerButton::section { background: #eef2f7; border: none; }
+QToolTip { background: #ffffff; color: #1f2d3d; border: 1px solid #c9d3e0; }
+QMessageBox, QFileDialog { background: #ffffff; }
+QMessageBox QLabel { color: #1f2d3d; }
+QStatusBar { background: #f3f6fb; color: #1f2d3d; }
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayoutMain">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frameMenu">
+      <property name="minimumSize">
+       <size>
+        <width>230</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>230</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutMenu">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>14</number>
+       </property>
+       <property name="topMargin">
+        <number>14</number>
+       </property>
+       <property name="rightMargin">
+        <number>14</number>
+       </property>
+       <property name="bottomMargin">
+        <number>14</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelAppTitle">
+         <property name="text">
+          <string>Store Revenue</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">appTitle</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelAppSubtitle">
+         <property name="text">
+          <string>Forecast &amp; Planning Studio</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">appSubtitle</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuDashboard">
+         <property name="text">
+          <string>Business Dashboard</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuInput">
+         <property name="text">
+          <string>Data Input</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuResults">
+         <property name="text">
+          <string>Forecast Results</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuPerformance">
+         <property name="text">
+          <string>Model Performance</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuWhatIf">
+         <property name="text">
+          <string>What-if Scenario</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuPlanning">
+         <property name="text">
+          <string>Kế hoạch nguồn lực</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonMenuAbout">
+         <property name="text">
+          <string>About</string>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">menu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer1">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelModelStatus">
+         <property name="text">
+          <string>Model: chưa nạp</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="class" stdset="0">
+          <string notr="true">appSubtitle</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidgetPages">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="pageDashboard">
+       <layout class="QVBoxLayout" name="verticalLayoutPageDashboard">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaDashboard">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <widget class="QWidget" name="scrollAreaContentsDashboard">
+           <layout class="QGridLayout" name="gridLayoutDashboard">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item row="0" column="0" colspan="4">
+             <layout class="QVBoxLayout" name="verticalLayoutDashHeader">
+              <item>
+               <widget class="QLabel" name="labelDashboardTitle">
+                <property name="text">
+                 <string>Business Dashboard</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageTitle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelDashboardSubtitle">
+                <property name="text">
+                 <string>Tổng quan doanh thu lịch sử Rossmann (ngày mở cửa có doanh thu, 2013-01 → 2015-07). Mọi số liệu tính từ dữ liệu thật; bộ lọc thời gian tính theo tháng.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageSubtitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0" colspan="4">
+             <layout class="QHBoxLayout" name="horizontalLayoutDashFilter">
+              <item>
+               <widget class="QLabel" name="labelDashFrom">
+                <property name="text">
+                 <string>Từ ngày</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateEdit" name="dateEditDashFrom">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy-MM-dd</string>
+                </property>
+                <property name="date">
+                 <date>
+                  <year>2013</year>
+                  <month>1</month>
+                  <day>1</day>
+                 </date>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelDashTo">
+                <property name="text">
+                 <string>Đến ngày</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDateEdit" name="dateEditDashTo">
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy-MM-dd</string>
+                </property>
+                <property name="date">
+                 <date>
+                  <year>2015</year>
+                  <month>7</month>
+                  <day>31</day>
+                 </date>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelDashStoreType">
+                <property name="text">
+                 <string>StoreType</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBoxDashStoreType">
+                <item>
+                 <property name="text">
+                  <string>Tất cả</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>a</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>b</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>c</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>d</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonDashApply">
+                <property name="text">
+                 <string>Áp dụng</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer2">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frameKpiTotal">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutKpiTotal">
+               <item>
+                <widget class="QLabel" name="labelKpiTotalTitle">
+                 <property name="text">
+                  <string>Tổng doanh thu lịch sử</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiTotalValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiTotalNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QFrame" name="frameKpiAvg">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutKpiAvg">
+               <item>
+                <widget class="QLabel" name="labelKpiAvgTitle">
+                 <property name="text">
+                  <string>Doanh thu TB / cửa hàng / ngày</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiAvgValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiAvgNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QFrame" name="frameKpiStores">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutKpiStores">
+               <item>
+                <widget class="QLabel" name="labelKpiStoresTitle">
+                 <property name="text">
+                  <string>Số cửa hàng · số tháng</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiStoresValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiStoresNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QFrame" name="frameKpiPromo">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutKpiPromo">
+               <item>
+                <widget class="QLabel" name="labelKpiPromoTitle">
+                 <property name="text">
+                  <string>TB ngày có KM / không KM</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiPromoValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelKpiPromoNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="4">
+             <widget class="QGroupBox" name="groupBoxDashTrend">
+              <property name="title">
+               <string>Xu hướng doanh thu theo tháng</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutGroupDashTrend">
+               <item>
+                <widget class="QWidget" name="widgetDashTrend">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>260</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutDashTrend">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxTopStores">
+              <property name="title">
+               <string>Top cửa hàng theo tổng doanh thu</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutTopStores">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutTopN">
+                 <item>
+                  <widget class="QLabel" name="labelTopN">
+                   <property name="text">
+                    <string>Số cửa hàng</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBoxTopN">
+                   <property name="minimum">
+                    <number>3</number>
+                   </property>
+                   <property name="maximum">
+                    <number>50</number>
+                   </property>
+                   <property name="value">
+                    <number>10</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer3">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QWidget" name="widgetDashTop">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>240</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutDashTop">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tableWidgetTopStores">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>160</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="2" colspan="2">
+             <widget class="QGroupBox" name="groupBoxCompare">
+              <property name="title">
+               <string>So sánh cửa hàng</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutCompare">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutCompare">
+                 <item>
+                  <widget class="QLabel" name="labelCompare">
+                   <property name="text">
+                    <string>Mã cửa hàng</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditCompareStores">
+                   <property name="text">
+                    <string>1, 262, 817</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>Ví dụ: 1, 262, 817</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonCompareStores">
+                   <property name="text">
+                    <string>So sánh</string>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">primary</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QWidget" name="widgetDashCompare">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>260</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutDashCompare">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="4">
+             <widget class="QGroupBox" name="groupBoxAlerts">
+              <property name="title">
+               <string>Cảnh báo: dự báo thấp hơn kỳ vọng (từ lần dự báo gần nhất)</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutAlerts">
+               <item>
+                <widget class="QLabel" name="labelAlertsSummary">
+                 <property name="text">
+                  <string>Chưa có lần dự báo nào. Hãy chạy dự báo ở màn hình Data Input.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tableWidgetAlerts">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageInput">
+       <layout class="QVBoxLayout" name="verticalLayoutPageInput">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaInput">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <widget class="QWidget" name="scrollAreaContentsInput">
+           <layout class="QGridLayout" name="gridLayoutInput">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <layout class="QVBoxLayout" name="verticalLayoutInputHeader">
+              <item>
+               <widget class="QLabel" name="labelInputTitle">
+                <property name="text">
+                 <string>Data Input</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageTitle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelInputSubtitle">
+                <property name="text">
+                 <string>Nhập một bản ghi hoặc tải CSV, kiểm tra dữ liệu rồi chạy dự báo bằng model đã lưu (không train lại).</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageSubtitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QLabel" name="labelInputInfo">
+              <property name="text">
+               <string>Dự báo doanh thu ngày theo cửa hàng · Hồi quy có giám sát (XGBoost, target log1p(Sales)). Khi Open = 0, Sales dự báo = 0.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">info</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QGroupBox" name="groupBoxSingle">
+              <property name="title">
+               <string>Dự báo một bản ghi</string>
+              </property>
+              <layout class="QFormLayout" name="formLayoutSingle">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelForm0">
+                 <property name="text">
+                  <string>Store</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxStore">
+                 <property name="editable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelForm1">
+                 <property name="text">
+                  <string>Ngày (Date)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDateEdit" name="dateEditDate">
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                 <property name="displayFormat">
+                  <string>yyyy-MM-dd</string>
+                 </property>
+                 <property name="date">
+                  <date>
+                   <year>2015</year>
+                   <month>8</month>
+                   <day>3</day>
+                  </date>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="labelForm2">
+                 <property name="text">
+                  <string>Khuyến mãi (Promo)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboBoxPromo">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không khuyến mãi</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1 - Có khuyến mãi</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="labelForm3">
+                 <property name="text">
+                  <string>Ngày lễ (StateHoliday)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="comboBoxStateHoliday">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không phải ngày lễ</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>a - Lễ công cộng</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>b - Lễ Phục sinh</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>c - Giáng sinh</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="labelForm4">
+                 <property name="text">
+                  <string>Nghỉ học (SchoolHoliday)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="comboBoxSchoolHoliday">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không nghỉ học</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1 - Nghỉ học</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QLabel" name="labelStoreInfo">
+                 <property name="text">
+                  <string>Thông tin cửa hàng: —</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0" colspan="2">
+                <widget class="QPushButton" name="pushButtonPredictSingle">
+                 <property name="text">
+                  <string>Dự báo bản ghi này</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">primary</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QGroupBox" name="groupBoxCsv">
+              <property name="title">
+               <string>Dự báo nhiều bản ghi từ CSV</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutCsv">
+               <item>
+                <widget class="QLabel" name="labelCsvHelp">
+                 <property name="text">
+                  <string>Cột bắt buộc: Store, Date, Promo, StateHoliday, SchoolHoliday. Tuỳ chọn: Open (Open = 0 → dự báo 0), Sales (để tính sai số).</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutCsvButtons">
+                 <item>
+                  <widget class="QPushButton" name="pushButtonChooseCsv">
+                   <property name="text">
+                    <string>Chọn file CSV…</string>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">primary</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonUseSample">
+                   <property name="text">
+                    <string>Dùng file mẫu (có Sales thật)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonUseKaggleTest">
+                   <property name="text">
+                    <string>Dùng test.csv Kaggle (08–09/2015)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelCsvPath">
+                 <property name="text">
+                  <string>Chưa chọn file</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutCsvFilter">
+                 <item>
+                  <widget class="QLabel" name="labelCsvStoreFilter">
+                   <property name="text">
+                    <string>Lọc cửa hàng</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBoxCsvStoreFilter">
+                   <item>
+                    <property name="text">
+                     <string>Tất cả</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer4">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxPreview">
+              <property name="title">
+               <string>Xem trước và kiểm tra dữ liệu</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPreview">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutPreviewKpi">
+                 <item>
+                  <widget class="QFrame" name="framePrevRows">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">kpi</string>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayoutPrevRows">
+                    <item>
+                     <widget class="QLabel" name="labelPrevRowsTitle">
+                      <property name="text">
+                       <string>Tổng số dòng</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiTitle</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevRowsValue">
+                      <property name="text">
+                       <string>—</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiValue</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevRowsNote">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiNote</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="framePrevCols">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">kpi</string>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayoutPrevCols">
+                    <item>
+                     <widget class="QLabel" name="labelPrevColsTitle">
+                      <property name="text">
+                       <string>Số cột</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiTitle</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevColsValue">
+                      <property name="text">
+                       <string>—</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiValue</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevColsNote">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiNote</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="framePrevDates">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">kpi</string>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayoutPrevDates">
+                    <item>
+                     <widget class="QLabel" name="labelPrevDatesTitle">
+                      <property name="text">
+                       <string>Khoảng ngày</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiTitle</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevDatesValue">
+                      <property name="text">
+                       <string>—</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiValue</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevDatesNote">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiNote</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="framePrevStores">
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">kpi</string>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayoutPrevStores">
+                    <item>
+                     <widget class="QLabel" name="labelPrevStoresTitle">
+                      <property name="text">
+                       <string>Số cửa hàng</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiTitle</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevStoresValue">
+                      <property name="text">
+                       <string>—</string>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiValue</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelPrevStoresNote">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                      <property name="class" stdset="0">
+                       <string notr="true">kpiNote</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelValidationStatus">
+                 <property name="text">
+                  <string>Chưa kiểm tra dữ liệu.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tableWidgetPreview">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>200</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <layout class="QHBoxLayout" name="horizontalLayoutRun">
+              <item>
+               <spacer name="horizontalSpacer5">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonPredictCsv">
+                <property name="text">
+                 <string>Chạy dự báo CSV  →</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageResults">
+       <layout class="QVBoxLayout" name="verticalLayoutPageResults">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaResults">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <widget class="QWidget" name="scrollAreaContentsResults">
+           <layout class="QGridLayout" name="gridLayoutResults">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item row="0" column="0" colspan="4">
+             <layout class="QVBoxLayout" name="verticalLayoutResHeader">
+              <item>
+               <widget class="QLabel" name="labelResTitle">
+                <property name="text">
+                 <string>Forecast Results</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageTitle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelResSubtitle">
+                <property name="text">
+                 <string>Chưa có kết quả dự báo.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageSubtitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frameResTotal">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutResTotal">
+               <item>
+                <widget class="QLabel" name="labelResTotalTitle">
+                 <property name="text">
+                  <string>Tổng doanh thu dự báo</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResTotalValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResTotalNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFrame" name="frameResAvg">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutResAvg">
+               <item>
+                <widget class="QLabel" name="labelResAvgTitle">
+                 <property name="text">
+                  <string>Doanh thu dự báo TB / dòng</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResAvgValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResAvgNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QFrame" name="frameResMetrics">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutResMetrics">
+               <item>
+                <widget class="QLabel" name="labelResMetricsTitle">
+                 <property name="text">
+                  <string>Chỉ số mô hình (tập Test)</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResMetricsValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResMetricsNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QFrame" name="frameResAlert">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutResAlert">
+               <item>
+                <widget class="QLabel" name="labelResAlertTitle">
+                 <property name="text">
+                  <string>Cảnh báo dự báo thấp</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResAlertValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelResAlertNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="4">
+             <widget class="QGroupBox" name="groupBoxResTrend">
+              <property name="title">
+               <string>Xu hướng dự báo</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutGroupResTrend">
+               <item>
+                <widget class="QWidget" name="widgetResTrend">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>270</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutResTrend">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxResWeekly">
+              <property name="title">
+               <string>Tổng dự báo theo kỳ</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutGroupResWeekly">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutResGranularity">
+                 <item>
+                  <widget class="QLabel" name="labelResGranularity">
+                   <property name="text">
+                    <string>Xem theo</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBoxResGranularity">
+                   <property name="currentIndex">
+                    <number>1</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Ngày</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Tuần</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Tháng</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer6">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QWidget" name="widgetResWeekly">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>240</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutResWeekly">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="2" colspan="2">
+             <widget class="QGroupBox" name="groupBoxResTable">
+              <property name="title">
+               <string>Chi tiết dự báo</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutResTable">
+               <item>
+                <widget class="QTableWidget" name="tableWidgetResults">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>240</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="4">
+             <widget class="QLabel" name="labelResWarnings">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">warning</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="4">
+             <widget class="QLabel" name="labelResInfo">
+              <property name="text">
+               <string>Dự báo doanh thu ngày theo cửa hàng · Hồi quy có giám sát (XGBoost, target log1p(Sales)). Khi Open = 0, Sales dự báo = 0.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">info</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="4">
+             <layout class="QHBoxLayout" name="horizontalLayoutResButtons">
+              <item>
+               <spacer name="horizontalSpacer7">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonExportCsv">
+                <property name="text">
+                 <string>Xuất CSV</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonGoDashboard">
+                <property name="text">
+                 <string>Xem Dashboard  →</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pagePerformance">
+       <layout class="QVBoxLayout" name="verticalLayoutPagePerformance">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaPerformance">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <widget class="QWidget" name="scrollAreaContentsPerformance">
+           <layout class="QGridLayout" name="gridLayoutPerf">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item row="0" column="0" colspan="3">
+             <layout class="QVBoxLayout" name="verticalLayoutPerfHeader">
+              <item>
+               <widget class="QLabel" name="labelPerfTitle">
+                <property name="text">
+                 <string>Model Performance</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageTitle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelPerfSubtitle">
+                <property name="text">
+                 <string>So sánh 2 baseline, Linear Regression, Decision Tree, Random Forest, XGBoost, LightGBM và Prophet trên Validation và Test (chia theo thời gian).</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageSubtitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="framePerfModel">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPerfModel">
+               <item>
+                <widget class="QLabel" name="labelPerfModelTitle">
+                 <property name="text">
+                  <string>Mô hình được chọn</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPerfModelValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPerfModelNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFrame" name="framePerfVal">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPerfVal">
+               <item>
+                <widget class="QLabel" name="labelPerfValTitle">
+                 <property name="text">
+                  <string>Validation (dùng để chọn)</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPerfValValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPerfValNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QFrame" name="framePerfTest">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPerfTest">
+               <item>
+                <widget class="QLabel" name="labelPerfTestTitle">
+                 <property name="text">
+                  <string>Test (chỉ để báo cáo)</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPerfTestValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPerfTestNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="3">
+             <widget class="QGroupBox" name="groupBoxPerfTable">
+              <property name="title">
+               <string>Bảng so sánh mô hình (results/evaluation/model_comparison.csv)</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPerfTable">
+               <item>
+                <widget class="QTableWidget" name="tableWidgetModelComparison">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>260</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxPerfChart">
+              <property name="title">
+               <string>RMSPE theo mô hình</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutGroupPerfChart">
+               <item>
+                <widget class="QWidget" name="widgetPerfChart">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>280</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutPerfChart">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QGroupBox" name="groupBoxPerfNotes">
+              <property name="title">
+               <string>Nhận xét</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPerfNotes">
+               <item>
+                <widget class="QTextBrowser" name="textBrowserPerfNotes"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="3">
+             <layout class="QHBoxLayout" name="horizontalLayoutPerfButtons">
+              <item>
+               <widget class="QProgressBar" name="progressBarTrain">
+                <property name="maximum">
+                 <number>0</number>
+                </property>
+                <property name="value">
+                 <number>-1</number>
+                </property>
+                <property name="textVisible">
+                 <bool>false</bool>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelTrainStatus">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer8">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonReloadModel">
+                <property name="text">
+                 <string>Nạp lại model từ file</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonRetrain">
+                <property name="text">
+                 <string>Train lại model</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageWhatIf">
+       <layout class="QVBoxLayout" name="verticalLayoutPageWhatIf">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaWhatIf">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <widget class="QWidget" name="scrollAreaContentsWhatIf">
+           <layout class="QGridLayout" name="gridLayoutWhatIf">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item row="0" column="0" colspan="4">
+             <layout class="QVBoxLayout" name="verticalLayoutWIHeader">
+              <item>
+               <widget class="QLabel" name="labelWITitle">
+                <property name="text">
+                 <string>What-if Scenario</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageTitle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelWISubtitle">
+                <property name="text">
+                 <string>Giữ nguyên cửa hàng, ngày và mọi đặc điểm khác; chỉ thay đổi Promo / StateHoliday / SchoolHoliday rồi so sánh dự báo.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageSubtitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QGroupBox" name="groupBoxWICommon">
+              <property name="title">
+               <string>Cửa hàng và ngày</string>
+              </property>
+              <layout class="QFormLayout" name="formLayoutWICommon">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelWICommon0">
+                 <property name="text">
+                  <string>Store</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxWIStore">
+                 <property name="editable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelWICommon1">
+                 <property name="text">
+                  <string>Ngày</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDateEdit" name="dateEditWIDate">
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                 <property name="displayFormat">
+                  <string>yyyy-MM-dd</string>
+                 </property>
+                 <property name="date">
+                  <date>
+                   <year>2015</year>
+                   <month>8</month>
+                   <day>5</day>
+                  </date>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QGroupBox" name="groupBoxWIBase">
+              <property name="title">
+               <string>Kịch bản gốc</string>
+              </property>
+              <layout class="QFormLayout" name="formLayoutWIBase">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelWIBase0">
+                 <property name="text">
+                  <string>Promo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxWIBasePromo">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không khuyến mãi</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1 - Có khuyến mãi</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelWIBase1">
+                 <property name="text">
+                  <string>StateHoliday</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxWIBaseHoliday">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không phải ngày lễ</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>a - Lễ công cộng</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>b - Lễ Phục sinh</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>c - Giáng sinh</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="labelWIBase2">
+                 <property name="text">
+                  <string>SchoolHoliday</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboBoxWIBaseSchool">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không nghỉ học</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1 - Nghỉ học</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QGroupBox" name="groupBoxWIScen">
+              <property name="title">
+               <string>Kịch bản What-if</string>
+              </property>
+              <layout class="QFormLayout" name="formLayoutWIScen">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelWIScen0">
+                 <property name="text">
+                  <string>Promo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxWIScenPromo">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không khuyến mãi</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1 - Có khuyến mãi</string>
+                  </property>
+                 </item>
+                 <property name="currentIndex">
+                  <number>1</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelWIScen1">
+                 <property name="text">
+                  <string>StateHoliday</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxWIScenHoliday">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không phải ngày lễ</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>a - Lễ công cộng</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>b - Lễ Phục sinh</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>c - Giáng sinh</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="labelWIScen2">
+                 <property name="text">
+                  <string>SchoolHoliday</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboBoxWIScenSchool">
+                 <item>
+                  <property name="text">
+                   <string>0 - Không nghỉ học</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>1 - Nghỉ học</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <layout class="QVBoxLayout" name="verticalLayoutWIButtons">
+              <item>
+               <widget class="QPushButton" name="pushButtonRunWhatIf">
+                <property name="text">
+                 <string>So sánh 2 kịch bản</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">primary</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButtonRunGrid">
+                <property name="text">
+                 <string>Xem mọi tổ hợp Promo × Lễ</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer9">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
+                <property name="sizeHint">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frameWIBase">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutWIBase">
+               <item>
+                <widget class="QLabel" name="labelWIBaseTitle">
+                 <property name="text">
+                  <string>Dự báo – kịch bản gốc</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIBaseValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIBaseNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QFrame" name="frameWIScen">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutWIScen">
+               <item>
+                <widget class="QLabel" name="labelWIScenTitle">
+                 <property name="text">
+                  <string>Dự báo – kịch bản What-if</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIScenValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIScenNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QFrame" name="frameWIDiff">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutWIDiff">
+               <item>
+                <widget class="QLabel" name="labelWIDiffTitle">
+                 <property name="text">
+                  <string>Chênh lệch tuyệt đối</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIDiffValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIDiffNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QFrame" name="frameWIPct">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutWIPct">
+               <item>
+                <widget class="QLabel" name="labelWIPctTitle">
+                 <property name="text">
+                  <string>Chênh lệch %</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIPctValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelWIPctNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxWIChart">
+              <property name="title">
+               <string>So sánh doanh thu dự báo</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutGroupWIChart">
+               <item>
+                <widget class="QWidget" name="widgetWIChart">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>270</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutWIChart">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="2" colspan="2">
+             <widget class="QGroupBox" name="groupBoxWITable">
+              <property name="title">
+               <string>Bảng kịch bản</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutWITable">
+               <item>
+                <widget class="QTableWidget" name="tableWidgetWhatIf">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>240</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="4">
+             <widget class="QLabel" name="labelWIWarnings">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">warning</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="4">
+             <widget class="QLabel" name="labelWIDisclaimer">
+              <property name="text">
+               <string>Lưu ý: What-if là mô phỏng dựa trên mô hình dự báo, KHÔNG chứng minh tác động nhân quả của khuyến mãi hay ngày lễ.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">info</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pagePlanning">
+       <layout class="QVBoxLayout" name="verticalLayoutPagePlanning">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QScrollArea" name="scrollAreaPlanning">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::NoFrame</enum>
+          </property>
+          <widget class="QWidget" name="scrollAreaContentsPlanning">
+           <layout class="QGridLayout" name="gridLayoutPlanning">
+            <property name="spacing">
+             <number>12</number>
+            </property>
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item row="0" column="0" colspan="3">
+             <layout class="QVBoxLayout" name="verticalLayoutPlanHeader">
+              <item>
+               <widget class="QLabel" name="labelPlanTitle">
+                <property name="text">
+                 <string>Kế hoạch nguồn lực</string>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageTitle</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelPlanSubtitle">
+                <property name="text">
+                 <string>Dự báo doanh thu kỳ tới theo lịch khuyến mãi/ngày lễ thật (test.csv, 01/08 – 17/09/2015), quy đổi ra số ca nhân viên, xếp hạng cửa hàng và gợi ý hành động.</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+                <property name="class" stdset="0">
+                 <string notr="true">pageSubtitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0" rowspan="2">
+             <widget class="QGroupBox" name="groupBoxPlanSettings">
+              <property name="title">
+               <string>Thiết lập kế hoạch</string>
+              </property>
+              <layout class="QFormLayout" name="formLayoutPlan">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelPlan0">
+                 <property name="text">
+                  <string>Cửa hàng</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEditPlanStores">
+                 <property name="text">
+                  <string>1, 262, 817</string>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Ví dụ: 1, 262, 817</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelPlan1">
+                 <property name="text">
+                  <string>Từ ngày</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDateEdit" name="dateEditPlanFrom">
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                 <property name="displayFormat">
+                  <string>yyyy-MM-dd</string>
+                 </property>
+                 <property name="date">
+                  <date>
+                   <year>2015</year>
+                   <month>8</month>
+                   <day>1</day>
+                  </date>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="labelPlan2">
+                 <property name="text">
+                  <string>Đến ngày</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QDateEdit" name="dateEditPlanTo">
+                 <property name="calendarPopup">
+                  <bool>true</bool>
+                 </property>
+                 <property name="displayFormat">
+                  <string>yyyy-MM-dd</string>
+                 </property>
+                 <property name="date">
+                  <date>
+                   <year>2015</year>
+                   <month>9</month>
+                   <day>17</day>
+                  </date>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="labelPlan3">
+                 <property name="text">
+                  <string>Xem theo</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="comboBoxPlanGranularity">
+                 <property name="currentIndex">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Ngày</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tuần</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tháng</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="labelPlan4">
+                 <property name="text">
+                  <string>Mức doanh thu dùng để lập kế hoạch</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="comboBoxPlanBasis">
+                 <item>
+                  <property name="text">
+                   <string>Dự báo (giá trị trung tâm)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Cận trên khoảng 80% (an toàn)</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="labelPlan5">
+                 <property name="text">
+                  <string>Doanh thu 1 ca nhân viên phục vụ (€)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QSpinBox" name="spinBoxRevenuePerShift">
+                 <property name="minimum">
+                  <number>100</number>
+                 </property>
+                 <property name="maximum">
+                  <number>20000</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>100</number>
+                 </property>
+                 <property name="value">
+                  <number>1000</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="labelPlan6">
+                 <property name="text">
+                  <string>Số ca tối thiểu / ngày mở cửa</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QSpinBox" name="spinBoxMinShifts">
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
+                 <property name="maximum">
+                  <number>20</number>
+                 </property>
+                 <property name="value">
+                  <number>2</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="labelPlan7">
+                 <property name="text">
+                  <string>Tổng ca có sẵn / ngày (0 = không giới hạn)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QSpinBox" name="spinBoxShiftBudget">
+                 <property name="minimum">
+                  <number>0</number>
+                 </property>
+                 <property name="maximum">
+                  <number>10000</number>
+                 </property>
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0" colspan="2">
+                <layout class="QHBoxLayout" name="horizontalLayoutPlanButtons">
+                 <item>
+                  <widget class="QPushButton" name="pushButtonRunPlan">
+                   <property name="text">
+                    <string>Lập kế hoạch</string>
+                   </property>
+                   <property name="class" stdset="0">
+                    <string notr="true">primary</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonExportPlan">
+                   <property name="text">
+                    <string>Xuất CSV</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFrame" name="framePlanTotal">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanTotal">
+               <item>
+                <widget class="QLabel" name="labelPlanTotalTitle">
+                 <property name="text">
+                  <string>Tổng doanh thu dự báo</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanTotalValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanTotalNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QFrame" name="framePlanShifts">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanShifts">
+               <item>
+                <widget class="QLabel" name="labelPlanShiftsTitle">
+                 <property name="text">
+                  <string>Tổng số ca cần</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanShiftsValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanShiftsNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QFrame" name="framePlanPeak">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanPeak">
+               <item>
+                <widget class="QLabel" name="labelPlanPeakTitle">
+                 <property name="text">
+                  <string>Ngày cao điểm</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanPeakValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanPeakNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QFrame" name="framePlanSuggest">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">kpi</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanSuggest">
+               <item>
+                <widget class="QLabel" name="labelPlanSuggestTitle">
+                 <property name="text">
+                  <string>Gợi ý hành động</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiTitle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanSuggestValue">
+                 <property name="text">
+                  <string>—</string>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiValue</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelPlanSuggestNote">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string notr="true">kpiNote</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="3">
+             <widget class="QGroupBox" name="groupBoxPlanChart">
+              <property name="title">
+               <string>Doanh thu dự báo và số ca cần theo kỳ</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutGroupPlanChart">
+               <item>
+                <widget class="QWidget" name="widgetPlanChart">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>290</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayoutPlanChart">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxPlanTable">
+              <property name="title">
+               <string>Bảng kế hoạch</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanTable">
+               <item>
+                <widget class="QTableWidget" name="tableWidgetPlan">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>220</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QGroupBox" name="groupBoxPlanRanking">
+              <property name="title">
+               <string>Xếp hạng cửa hàng trong kỳ</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanRanking">
+               <item>
+                <widget class="QTableWidget" name="tableWidgetPlanRanking">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>220</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="3">
+             <widget class="QGroupBox" name="groupBoxPlanSuggestions">
+              <property name="title">
+               <string>Gợi ý giải pháp (theo quy tắc, có ghi căn cứ)</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutPlanSuggestions">
+               <item>
+                <widget class="QTableWidget" name="tableWidgetSuggestions">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>200</height>
+                  </size>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="3">
+             <widget class="QLabel" name="labelPlanNote">
+              <property name="text">
+               <string>Số ca = doanh thu dự báo ÷ doanh thu 1 ca (giả định do người dùng nhập, vì dữ liệu Rossmann không có số liệu nhân sự), làm tròn lên và không thấp hơn số ca tối thiểu. Ngày đóng cửa = 0 ca. Gợi ý là hỗ trợ quyết định, không phải lời giải tối ưu.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="class" stdset="0">
+               <string notr="true">info</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageAbout">
+       <layout class="QVBoxLayout" name="verticalLayoutAbout">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>20</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="rightMargin">
+         <number>20</number>
+        </property>
+        <property name="bottomMargin">
+         <number>20</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelAboutTitle">
+          <property name="text">
+           <string>About</string>
+          </property>
+          <property name="class" stdset="0">
+           <string notr="true">pageTitle</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelAboutSubtitle">
+          <property name="text">
+           <string>Thông tin đề tài, dữ liệu, mô hình và nhóm thực hiện.</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="class" stdset="0">
+           <string notr="true">pageSubtitle</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="textBrowserAbout">
+          <property name="openExternalLinks">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

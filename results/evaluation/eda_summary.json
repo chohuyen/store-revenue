@@ -1,0 +1,59 @@
+{
+ "rows_raw": 1017209,
+ "rows_clean": 844338,
+ "stores": 1115,
+ "date_range": [
+  "2013-01-01",
+  "2015-07-31"
+ ],
+ "closed_rows_open0": 172817,
+ "open_but_zero_sales": 54,
+ "sales_mean": 6955.959133664481,
+ "sales_median": 6369.0,
+ "skew_sales": 1.5949288357537479,
+ "skew_log1p_sales": -0.10932694615869186,
+ "avg_sales_by_dow": {
+  "1": 8216.0,
+  "2": 7088.0,
+  "3": 6729.0,
+  "4": 6768.0,
+  "5": 7073.0,
+  "6": 5875.0,
+  "7": 8225.0
+ },
+ "rows_by_dow": {
+  "1": 137557,
+  "2": 143955,
+  "3": 141922,
+  "4": 134626,
+  "5": 138633,
+  "6": 144052,
+  "7": 3593
+ },
+ "avg_sales_promo": {
+  "0": 5929.826183034807,
+  "1": 8228.739730679934
+ },
+ "promo_uplift_pct_observed": 38.76864981679062,
+ "promo_on_weekend_rows": 0,
+ "stateholiday_rows_with_sales": {
+  "0": 843428,
+  "a": 694,
+  "b": 145,
+  "c": 71
+ },
+ "avg_sales_by_stateholiday": {
+  "0": 6954.0,
+  "a": 8487.0,
+  "b": 9888.0,
+  "c": 9744.0
+ },
+ "corr_with_sales": {
+  "Customers": 0.824,
+  "Promo": 0.368,
+  "SchoolHoliday": 0.039,
+  "DayOfWeek": -0.179,
+  "CompetitionDistance": -0.036,
+  "Promo2": -0.128
+ }
+}

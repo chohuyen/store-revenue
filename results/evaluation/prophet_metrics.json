@@ -1,0 +1,35 @@
+{
+ "model": "Prophet (mỗi cửa hàng 1 mô hình)",
+ "settings": {
+  "target": "log1p(Sales)",
+  "seasonality": [
+   "weekly",
+   "yearly"
+  ],
+  "regressors": [
+   "Promo",
+   "SchoolHoliday",
+   "IsStateHoliday"
+  ]
+ },
+ "n_stores": 1115,
+ "val": {
+  "RMSPE": 0.13577901192224026,
+  "MAE": 739.5321611008281,
+  "MSE": 1000954.5641773641,
+  "RMSE": 1000.4771682439156,
+  "R2": 0.8922873607867042,
+  "n_rows": 37472,
+  "n_rmspe": 37472
+ },
+ "test": {
+  "RMSPE": 0.15402698824405128,
+  "MAE": 764.6003619194016,
+  "MSE": 1233732.752282388,
+  "RMSE": 1110.7352305038262,
+  "R2": 0.8668539239286209,
+  "n_rows": 41396,
+  "n_rmspe": 41396
+ },
+ "seconds": 49.6
+}

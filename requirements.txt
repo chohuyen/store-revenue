@@ -1,0 +1,12 @@
+# Dùng Python 3.12 (đã kiểm thử 3.12 và 3.13). KHÔNG dùng 3.14+ vì các thư viện dưới đây chưa hỗ trợ
+pandas==2.2.3
+numpy==2.1.3
+scikit-learn==1.6.1
+xgboost==2.1.4
+lightgbm==4.6.0
+joblib==1.4.2
+matplotlib==3.10.1
+PyQt6==6.8.1
+pytest==8.3.5
+# Prophet (tuỳ chọn, chỉ để chạy scripts/prophet_experiment.py): pip install prophet
+# Qt Designer (tuỳ chọn, để mở file .ui): cài bản độc lập tại build-system.fman.io/qt-designer-download

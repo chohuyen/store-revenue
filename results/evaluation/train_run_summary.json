@@ -1,0 +1,12 @@
+{
+ "selected": "XGBoost",
+ "total_seconds": 34.3,
+ "interval": {
+  "lower_q": 0.1,
+  "upper_q": 0.9,
+  "ratio_low": 0.8820495563361759,
+  "ratio_high": 1.238692240382975,
+  "fitted_on": "validation",
+  "test_coverage": 0.8032418591168229
+ }
+}

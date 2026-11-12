@@ -1,0 +1,35 @@
+{
+ "val": {
+  "RMSPE": 0.13887272522443042,
+  "MAE": 766.1769445676172,
+  "MSE": 1155931.2169861137,
+  "RMSE": 1075.1424170713915,
+  "R2": 0.8756103357868811,
+  "n_rows": 37472,
+  "n_rmspe": 37472,
+  "matches_metadata": true
+ },
+ "test": {
+  "RMSPE": 0.14593140993358056,
+  "MAE": 734.5237285515786,
+  "MSE": 1148811.7141146308,
+  "RMSE": 1071.826345129952,
+  "R2": 0.8760187150772932,
+  "n_rows": 41396,
+  "n_rmspe": 41396,
+  "matches_metadata": true,
+  "interval_coverage": 0.8032418591168229,
+  "total_pred_million": 283.47666336787864,
+  "total_actual_million": 289.57175,
+  "bias_pct": -2.1048623120595744,
+  "share_rows_abs_pct_error_gt_10": 42.426804522176056,
+  "top10_store_share_sq_error_pct": 15.645756114190393
+ },
+ "shap_top5": {
+  "Promo": 0.1437000036239624,
+  "CompetitionDistance": 0.07989999651908875,
+  "Assortment": 0.06449999660253525,
+  "Store": 0.06400000303983688,
+  "Promo2SinceYear": 0.05900000035762787
+ }
+}
